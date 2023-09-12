@@ -1,0 +1,84 @@
+\documentclass[a4paper,10pt]{article}
+
+% Paquetes requeridos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage[style=apa, backend=biber, natbib=true, language=spanish, url=true]{biblatex}
+\usepackage{tocloft} % Para personalizar el índice
+\usepackage[left=3.5cm,right=2.5cm,top=3.5cm,bottom=3.8cm]{geometry}
+\usepackage{setspace} % Espaciado
+\usepackage{titlesec} % Para personalizar los títulos
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{newtxtext}
+
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\renewcommand{\headrulewidth}{0pt} % Elimina la línea del encabezado
+
+\addbibresource{referencias.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+% Configuraciones
+\setlength{\parskip}{6pt} % Espacio entre párrafos
+\setstretch{1.15} % Espacio entre líneas
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Para puntos en el índice
+
+% Estilos para títulos y subtítulos
+\titleformat{\section}
+{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\fontsize{10}{13}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\fontsize{10.5}{13}\bfseries}{\thesubsubsection}{1em}{}
+
+\usepackage[hypertexnames=false, colorlinks=true, 
+linkcolor=blue, 
+citecolor=blue, 
+urlcolor=blue, 
+linkbordercolor={1 1 0}, 
+citebordercolor={1 1 0}, 
+urlbordercolor={1 1 0}, 
+filecolor=blue, 
+pdfborderstyle={/S/U/W 1}]{hyperref}
+
+% Inicio del documento
+\begin{document}
+	\pagestyle{empty}
+	% Carátula
+	\begin{titlepage}
+		\centering
+		\vspace*{1.5cm}
+		\includegraphics[width=0.3\textwidth]{unerlogo.png}
+		\linebreak
+		{\fontsize{14}{17}\bfseries Título del Documento\par}
+		{\small [Nombre del primer alumno]\par}
+		{\small [Nombre del segundo alumno]\par}
+		{\small [Nombre del tercer alumno]\par}
+		{\normalsize [Nombre de la Universidad]\par}
+		{\normalsize Facultad de [nombre de la facultad]\par}
+		{\normalsize Carrera de [nombre de la carrera]\par}
+		{\small Correo electrónico de autor\par}
+		{\small Correo electrónico de autor\par}
+		{\small Correo electrónico de autor\par}
+		% Resumen y palabras clave con un pequeño desplazamiento hacia la izquierda
+		\hspace{-5cm}{\small \textbf{Abstract.} Resumen hasta 200 palabras. \par}
+		\hspace{-5.2cm}{\small \textbf{Keywords:} Máximo 5 palabras claves.\par}
+	\end{titlepage}
+	
+	% Índice
+	\tableofcontents
+	\thispagestyle{empty}
+	
+	\section{Metodologías ágiles (Agilismo)}
+	\section{Manifiesto ágil, XP y Scrum}
+	\subsection{Historia del agilismo}
+	\subsection{El manifiesto ágil}
+	\subsection{eXtreme Programming}
+	\subsection{Scrum}
+	sa
+	\nocite{*}
+	\printbibliography[heading=bibintoc]
+\end{document}
